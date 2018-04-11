@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item
+        android:id="@+id/nav_gerer"
+        android:icon="@drawable/ic_rapport"
+        android:title="Gerer ma serre" />
+    <item
+        android:id="@+id/nav_type"
+        android:icon="@drawable/ic_menu_slideshow"
+        android:title="Mes types de plantes" />
+    <item
+        android:id="@+id/nav_serre"
+        android:icon="@drawable/ic_menu_manage"
+        android:title="Mes serres" />
+
+    <item android:title="Modifications">
+        <menu>
+            <item
+                android:id="@+id/nav_ajout_serre"
+                android:icon="@drawable/add"
+                android:title="Ajouter une serre" />
+            <item
+                android:id="@+id/nav_ajout_plante"
+                android:icon="@drawable/ic_plant"
+                android:title="Ajouter un type de plante"
+                android:iconTint="@color/colorAccent"
+                />
+            <item
+                android:id="@+id/nav_mode"
+                android:icon="@drawable/ic_mail"
+                android:title="mode de fonctionnement"
+                android:iconTint="@color/colorAccent"
+                android:iconTintMode="add"
+                />
+            <item
+                android:id="@+id/nav_lancer_culture"
+                android:icon="@drawable/ic_mail"
+                android:title="Lancer culture"
+                android:iconTint="@color/colorAccent"
+                android:iconTintMode="add"
+                />
+        </menu>
+    </item>
+
+</menu>

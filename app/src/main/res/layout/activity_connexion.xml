@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.example.khaireddine.mygreenhouse.Connexion">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        android:background="@drawable/ic_1"
+        android:minHeight="150dp"
+        android:textAlignment="center"
+        app:titleTextColor="@android:color/white"></android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/mail-label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/mail"
+            android:layout_alignStart="@id/mail"
+            android:text="Adresse mail"
+            android:textSize="15dp"
+            android:visibility="invisible" />
+
+        <EditText
+            android:id="@+id/mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mail-label"
+            android:layout_centerHorizontal="true"
+            android:drawableLeft="@drawable/ic_mail"
+            android:drawableTint="@color/colorPrimaryDark"
+            android:ems="15"
+            android:hint="Adresse mail"
+            android:inputType="textEmailAddress"
+            android:textColorHint="#000000"
+            />
+
+        <TextView
+            android:id="@+id/password-label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/mail"
+            android:layout_alignStart="@id/mail"
+            android:layout_below="@id/mail"
+            android:text="Mot de passe"
+            android:textSize="15dp"
+            android:visibility="invisible" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/password-label"
+            android:layout_centerHorizontal="true"
+            android:drawableLeft="@drawable/ic_password"
+            android:drawableTint="@color/colorPrimaryDark"
+            android:ems="15"
+            android:hint="Mot de passe"
+            android:onClick="To_connexion"
+            android:inputType="textPassword"
+            android:textColorHint="#000000" />
+
+        <Button
+            android:id="@+id/connecter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/password"
+            android:text="Se connecter"
+            style="@style/ButtonStyle"
+            android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/label_creer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/connecter"
+            android:layout_centerHorizontal="true"
+            android:text="______ Si Vous n'avez pas un compte______" />
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/creer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_creer"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bouton2"
+            android:ems="13"
+            android:onClick="ToInscription"
+            android:text="Créer un compte "
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textSize="20dp" />
+    </RelativeLayout>
+</RelativeLayout>
+

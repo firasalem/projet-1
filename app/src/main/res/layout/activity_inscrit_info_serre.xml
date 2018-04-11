@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.khaireddine.mygreenhouse.Inscrit_info_serre"
+
+    >
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.khaireddine.greenhouse.SerreInformations"
+
+        >
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/ic_2"
+            android:minHeight="150dp"
+            android:textAlignment="center"
+            app:titleTextColor="@android:color/white"></android.support.v7.widget.Toolbar>
+        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+            android:layout_below="@id/toolbar"
+            android:id="@+id/plant_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="choisir un type de plante "
+            android:layout_centerHorizontal="true"
+            android:textColorHint="#05ab9a"
+            app:met_floatingLabel="normal"
+            android:ems="12"
+            android:layout_alignStart="@id/label_fonct"
+            android:layout_alignLeft="@id/label_fonct" />
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/label_fonct"
+            android:text="Choisir le mode de fonctionnement :"
+            android:layout_below="@+id/plant_spinner"
+            android:textColor="#000000"
+            />
+
+        <RadioGroup
+            android:layout_alignStart="@id/label_fonct"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_fonct"
+            android:text="RadioButton"
+            android:layout_alignLeft="@id/label_fonct">
+
+            <RadioButton
+                android:id="@+id/manuel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layoutDirection="rtl"
+                android:text="Manuelle"
+                android:textAlignment="textStart" />
+
+            <RadioButton
+                android:id="@+id/auto"
+                android:layout_width="208dp"
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:textAlignment="textStart"
+                android:layout_gravity="start"
+                android:text="automatique" />
+        </RadioGroup>
+        <Button
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/inscrit"
+            android:layout_below="@id/radioButton"
+            android:onClick="To_accueil"
+            android:text="S'inscrire"
+            style="@style/ButtonStyle"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>
+

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.example.khaireddine.mygreenhouse.Ajouter_plantes"
+    android:layout_marginTop="20dp"
+    >
+    <TextView
+        android:id="@+id/label_nom_plante"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+        android:text="Nom du plante"
+        android:layout_alignLeft="@+id/nom_plante"
+        android:layout_alignStart="@+id/nom_plante"
+        android:textColor="@color/black"
+        android:visibility="invisible"
+     />
+    <EditText
+        android:id="@+id/nom_plante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/label_nom_plante"
+        android:hint="Nom du plante"
+        android:inputType="textPersonName"
+        android:layout_centerHorizontal="true"
+        android:ems="15"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/label_famille"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nom_plante"
+        android:text="Famille du plante"
+        android:layout_alignLeft="@+id/famille"
+        android:layout_alignStart="@+id/famille"
+        android:textColor="@color/black"
+        android:visibility="invisible"/>
+    <EditText
+        android:id="@+id/famille"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/label_famille"
+        android:hint="Famille"
+        android:inputType="textPersonName"
+        android:layout_centerHorizontal="true"
+        android:ems="15"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/label_cycle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/famille"
+        android:text="Nombre de jours du Cycle de vie"
+        android:layout_alignLeft="@+id/cycle"
+        android:layout_alignStart="@+id/cycle"
+        android:textColor="@color/black"
+        android:visibility="invisible"
+        />
+    <EditText
+        android:id="@+id/cycle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/label_cycle"
+        android:hint="Nombre de jours du Cycle de vie"
+        android:layout_centerHorizontal="true"
+        android:ems="15"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:inputType="numberDecimal"
+        />
+    <TextView
+        android:id="@+id/label_nbr_periode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cycle"
+        android:text="Nombre de période du cycle de vie"
+        android:layout_alignLeft="@+id/nbr_periode"
+        android:layout_alignStart="@+id/nbr_periode"
+        android:textColor="@color/black"
+        android:visibility="invisible"
+        />
+    <EditText
+        android:id="@+id/nbr_periode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/label_nbr_periode"
+        android:hint="Nombre de période du cycle de vie"
+        android:layout_centerHorizontal="true"
+        android:ems="15"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:inputType="numberDecimal"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Suivant"
+        style="@style/ButtonStyle"
+        android:layout_below="@id/nbr_periode"
+        android:onClick="To_Cycle_vie"
+        />
+</RelativeLayout>

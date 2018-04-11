@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.khaireddine.mygreenhouse.Inscrit_info_compte"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    >
+    <TextView
+        android:id="@+id/label_mail_inscrit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adresse Email"
+        android:layout_centerHorizontal="true"
+        android:layout_alignStart="@id/mail_inscrit"
+        android:layout_alignLeft="@id/mail_inscrit"
+        android:visibility="invisible"
+        android:layout_marginTop="15dp"
+        />
+    <EditText
+        android:id="@+id/mail_inscrit"
+        android:layout_below="@id/label_mail_inscrit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Adresse Email"
+        android:layout_centerHorizontal="true"
+        android:ems="15"
+        android:inputType="textEmailAddress"
+        android:drawableLeft="@drawable/ic_mail"
+        android:drawableTint="@color/colorPrimaryDark"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        />
+    <TextView
+        android:id="@+id/label_password_inscrit"
+        android:layout_below="@+id/mail_inscrit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mot de passe"
+        android:layout_centerHorizontal="true"
+        android:layout_alignStart="@id/password_inscrit"
+        android:layout_alignLeft="@id/password_inscrit"
+        android:visibility="invisible"
+        />
+
+    <EditText
+        android:id="@+id/password_inscrit"
+        android:layout_below="@+id/label_password_inscrit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Mot de passe"
+        android:layout_centerHorizontal="true"
+        android:ems="15"
+        android:inputType="textPassword"
+        android:drawableLeft="@drawable/ic_lock"
+        android:drawableTint="@color/colorPrimaryDark"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/label_password2_inscrit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/password2_inscrit"
+        android:layout_alignStart="@+id/password2_inscrit"
+        android:layout_below="@+id/password_inscrit"
+        android:text="Confirmez mot de passe"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/password2_inscrit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/label_password2_inscrit"
+        android:drawableLeft="@drawable/ic_lock"
+        android:drawableTint="@color/colorPrimaryDark"
+        android:ems="15"
+        android:hint="Confirmez votre mot de passe"
+        android:layout_centerHorizontal="true"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        />
+
+    <Button
+        android:id="@+id/suivant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password2_inscrit"
+        android:onClick="To_Serre_info"
+        android:text="Suivant"
+        style="@style/ButtonStyle"
+        />
+
+</RelativeLayout>
+

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.khaireddine.mygreenhouse.Cycle_Vie"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Periode n"
+android:id="@+id/label_activity"
+    android:textSize="30dp"
+    android:textColor="@color/black"
+    android:layout_centerHorizontal="true"
+    />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/label_temperature"
+        android:layout_below="@+id/label_activity"
+        android:text="Température"
+        android:layout_alignStart="@id/temperature"
+        android:layout_alignLeft="@id/temperature" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/temperature"
+        android:layout_below="@+id/label_temperature"
+        android:hint="Température"
+        android:layout_centerHorizontal="true"
+        android:ems="13"
+        android:inputType="numberDecimal"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/label_humidite"
+        android:layout_below="@id/temperature"
+        android:text="Humidité"
+        android:layout_alignStart="@id/humidite"
+        android:layout_alignLeft="@id/humidite"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/humidite"
+        android:layout_below="@+id/label_humidite"
+        android:hint="Humidité"
+        android:layout_centerHorizontal="true"
+        android:ems="13"
+        android:inputType="numberDecimal"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/label_lumiere"
+        android:layout_below="@id/humidite"
+        android:text="Lumiére ambiante"
+        android:layout_alignStart="@id/lumiere"
+        android:layout_alignLeft="@id/lumiere"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lumiere"
+        android:layout_below="@+id/label_lumiere"
+        android:hint="Lumiére ambiante"
+        android:layout_centerHorizontal="true"
+        android:ems="13"
+        android:inputType="numberDecimal"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/label_hum_sol"
+        android:layout_below="@+id/lumiere"
+        android:text="Humidité du sol"
+        android:layout_alignStart="@id/hum_sol"
+        android:layout_alignLeft="@id/hum_sol"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hum_sol"
+        android:layout_below="@+id/label_hum_sol"
+        android:hint="Humidité du sol"
+        android:layout_centerHorizontal="true"
+        android:ems="13"
+        android:inputType="numberDecimal"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/label_co2"
+        android:layout_below="@+id/hum_sol"
+        android:text="CO2"
+        android:layout_alignStart="@id/co2"
+        android:layout_alignLeft="@id/co2"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/co2"
+        android:layout_below="@+id/label_co2"
+        android:hint="CO2"
+        android:layout_centerHorizontal="true"
+        android:ems="13"
+        android:inputType="numberDecimal"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/label_temp_eau"
+        android:layout_below="@id/co2"
+        android:text="Température d'eau"
+        android:layout_alignStart="@id/temp_eau"
+        android:layout_alignLeft="@id/temp_eau"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/temp_eau"
+        android:layout_below="@+id/label_temp_eau"
+        android:hint="Température de l'eau"
+        android:layout_centerHorizontal="true"
+        android:ems="13"
+        android:inputType="numberDecimal"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Suivant"
+        android:onClick="next"
+        android:layout_below="@id/temp_eau"
+        android:layout_centerHorizontal="true"
+        style="@style/ButtonStyle"
+        />
+
+</RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.khaireddine.mygreenhouse.Gerer_Serre">
+    <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+        android:layout_below="@id/toolbar"
+        android:id="@+id/serre_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="choisir une serre "
+        android:layout_centerHorizontal="true"
+        android:textColorHint="#05ab9a"
+        app:met_floatingLabel="normal"
+        android:ems="12"
+        android:layout_alignStart="@id/label_fonct"
+        android:layout_alignLeft="@id/label_fonct" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/serre_spinner"
+        android:id="@+id/relativeLayout2">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Température"
+    android:id="@+id/temp_label"
+    />
+
+        <SeekBar
+            android:id="@+id/seekBar_temperature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:layout_below="@id/temp_label"
+            android:layout_marginBottom="20dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Humidité"
+            android:id="@+id/humid_label"
+            android:layout_below="@id/seekBar_temperature"
+            />
+    <SeekBar
+        android:id="@+id/seekBar_humidite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/humid_label"
+        android:max="100"
+        android:layout_marginBottom="20dp"
+        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+                android:text="lumiére ambiante"
+            android:id="@+id/lumiere_label"
+            android:layout_below="@id/seekBar_humidite"
+            />
+        <SeekBar
+            android:id="@+id/seekBar_lumiere"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lumiere_label"
+            android:max="100"
+            android:layout_marginBottom="20dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Humidité du sol"
+            android:id="@+id/humid_sol_label"
+            android:layout_below="@id/seekBar_lumiere"
+            />
+        <SeekBar
+            android:id="@+id/seekBar_humidite_sol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/humid_sol_label"
+            android:max="100"
+            android:layout_marginBottom="20dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CO2"
+            android:id="@+id/co2_label"
+            android:layout_below="@id/seekBar_humidite_sol"
+            />
+        <SeekBar
+            android:id="@+id/seekBar_co2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/co2_label"
+            android:max="100"
+            android:layout_marginBottom="20dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Température d'eau"
+            android:id="@+id/temp_eau_label"
+            android:layout_below="@id/seekBar_co2"
+            />
+        <SeekBar
+            android:id="@+id/seekBar_temperature_eau"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/temp_eau_label"
+            android:max="100"
+            />
+</RelativeLayout>
+</RelativeLayout>
