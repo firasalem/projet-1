@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.khaireddine.mygreenhouse.Humidite_sol"
+    android:layout_margin="@dimen/activity_horizontal_margin">
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.v7.widget.CardView
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_centerHorizontal="true"
+        android:theme="@style/CardView.Dark"
+        android:layout_marginTop="24dp"
+        android:id="@+id/cardView_sol"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/sol"
+                android:id="@+id/img"
+                android:adjustViewBounds="true"
+                />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Humidité du sol :"
+                    android:textSize="30dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_alignBottom="@id/img"
+                    android:id="@+id/sol_label"
+                    android:layout_marginLeft="20dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="24"
+                    android:textSize="24dp"
+                    android:drawableRight="@drawable/water"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_below="@id/sol_label"
+                    android:layout_alignStart="@id/sol_label"
+                    android:layout_alignLeft="@id/sol_label" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/cardView_sol"
+        android:text="Activer ventilo"
+        android:textSize="24dp"
+        android:layout_marginTop="24dp"
+        />
+</RelativeLayout>

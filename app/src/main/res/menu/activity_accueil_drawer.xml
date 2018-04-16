@@ -3,17 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
     <item
-        android:id="@+id/nav_gerer"
-        android:icon="@drawable/ic_rapport"
-        android:title="Gerer ma serre" />
+        android:id="@+id/nav_rapports"
+        android:icon="@drawable/file"
+        android:title="Rapports" />
     <item
-        android:id="@+id/nav_type"
-        android:icon="@drawable/ic_menu_slideshow"
-        android:title="Mes types de plantes" />
-    <item
-        android:id="@+id/nav_serre"
-        android:icon="@drawable/ic_menu_manage"
+        android:id="@+id/nav_mes_serre"
+        android:icon="@drawable/greenhouse"
         android:title="Mes serres" />
+    <item
+        android:id="@+id/nav_types"
+        android:title="Mes types de plantes"
+        android:icon="@drawable/cactus"
+        />
 
     <item android:title="Modifications">
         <menu>
@@ -28,19 +29,26 @@
                 android:iconTint="@color/colorAccent"
                 />
             <item
+                android:id="@+id/nav_lancer_culture"
+                android:icon="@drawable/ic_plantes_ajout"
+                android:title="Lancer culture"
+                android:iconTint="@color/colorAccent"
+                android:iconTintMode="add"
+                />
+            <item
                 android:id="@+id/nav_mode"
-                android:icon="@drawable/ic_mail"
+                android:icon="@drawable/ic_robot"
                 android:title="mode de fonctionnement"
                 android:iconTint="@color/colorAccent"
                 android:iconTintMode="add"
                 />
             <item
-                android:id="@+id/nav_lancer_culture"
-                android:icon="@drawable/ic_mail"
-                android:title="Lancer culture"
-                android:iconTint="@color/colorAccent"
-                android:iconTintMode="add"
-                />
+            android:id="@+id/nav_gerer"
+            android:icon="@drawable/ic_farmer1"
+            android:title="Gerer serres"
+            android:iconTintMode="add"
+            />
+
         </menu>
     </item>
 

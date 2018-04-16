@@ -2,8 +2,6 @@ package com.example.khaireddine.mygreenhouse;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -25,15 +23,6 @@ public class Accueil extends AppCompatActivity
         setContentView(R.layout.activity_accueil);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -86,19 +75,19 @@ public class Accueil extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_gerer)
+        if (id == R.id.nav_rapports)
         {
-            Intent intent_rapports = new Intent(this, Rapports.class);
+            Intent intent_rapports = new Intent(this, Rapports_Serre.class);
             startActivity(intent_rapports);
         }
-        else if (id == R.id.nav_type)
+        else if (id == R.id.nav_mes_serre)
         {
-            Intent intent_plantes = new Intent(this, Mes_plantes.class);
+            Intent intent_plantes = new Intent(this, Mes_Serres.class);
             startActivity(intent_plantes);
         }
-        else if (id == R.id.nav_serre)
+        else if (id == R.id.nav_types)
         {
-            Intent intent_rapports = new Intent(this, Mes_Serres.class);
+            Intent intent_rapports = new Intent(this, Mes_plantes.class);
             startActivity(intent_rapports);
 
         }
@@ -116,6 +105,16 @@ public class Accueil extends AppCompatActivity
         {
             Intent intent_mode = new Intent(this, Mode_fonctionnement.class);
             startActivity(intent_mode);
+        }
+        else if (id == R.id.nav_lancer_culture)
+        {
+            Intent intent_lancer = new Intent(this, Lancer_Cultures.class);
+            startActivity(intent_lancer);
+        }
+        else if (id == R.id.nav_gerer)
+        {
+            Intent intent_gerer = new Intent(this, Manupiler.class);
+            startActivity(intent_gerer);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

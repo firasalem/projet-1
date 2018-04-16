@@ -16,7 +16,8 @@
         android:background="@drawable/ic_1"
         android:minHeight="150dp"
         android:textAlignment="center"
-        app:titleTextColor="@android:color/white"></android.support.v7.widget.Toolbar>
+
+        ></android.support.v7.widget.Toolbar>
 
     <RelativeLayout
         android:id="@+id/relativeLayout"

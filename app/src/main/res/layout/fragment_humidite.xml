@@ -1,0 +1,64 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.khaireddine.mygreenhouse.Humidite">
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.v7.widget.CardView
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_centerHorizontal="true"
+        android:theme="@style/CardView.Dark"
+        android:layout_marginTop="24dp"
+        android:id="@+id/cardView_humid"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/humid_img"
+                android:id="@+id/img"
+                android:adjustViewBounds="true"
+                />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Humidité :"
+                    android:textSize="30dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_alignBottom="@id/img"
+                    android:id="@+id/label_humid"
+                    android:layout_marginLeft="20dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="24"
+                    android:textSize="24dp"
+                    android:drawableRight="@drawable/blue_humidity"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/label_humid"
+                    android:layout_marginLeft="20dp"
+                    />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/cardView_humid"
+        android:text="Activer ventilo"
+        android:textSize="24dp"
+        android:layout_marginTop="24dp"
+        />
+</RelativeLayout>

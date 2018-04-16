@@ -1,0 +1,81 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.khaireddine.mygreenhouse.Temperature">
+    <!-- TODO: Update blank fragment layout -->
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+        <android.support.v7.widget.CardView
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_centerHorizontal="true"
+            android:theme="@style/CardView.Dark"
+            android:layout_marginTop="24dp"
+            android:id="@+id/cardView_temp"
+
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/temperature_img"
+                    android:id="@+id/img"
+                    android:adjustViewBounds="true"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Température :"
+                    android:drawableRight="@drawable/temp"
+                    android:textSize="30dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_alignBottom="@id/img"
+                    android:id="@+id/label_temp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="24"
+                    android:textSize="24dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:drawableRight="@drawable/celsus"
+                    android:drawablePadding="10dp"
+                    android:layout_below="@id/label_temp"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/temp_value"
+                    />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/cardView_temp"
+            android:text="Activer ventilo                     "
+            android:textSize="18dp"
+            android:layout_marginTop="24dp"
+            android:switchPadding="10dp"
+            android:layout_alignStart="@+id/cardView_temp"
+            android:layout_alignLeft="@+id/cardView_temp"
+            />
+        <com.jjoe64.graphview.GraphView
+            android:layout_width="match_parent"
+            android:layout_height="200dip"
+            android:id="@+id/graph"
+            android:layout_below="@id/switch1"/>
+</RelativeLayout>
+ </FrameLayout>

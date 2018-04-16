@@ -19,27 +19,6 @@ TextView nombre_periode;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cycle__vie);
-        Button next=(Button)findViewById(R.id.suivant);
-        FieldTemperature=(EditText)findViewById(R.id.temperature);
-        FieldHumidite=(EditText)findViewById(R.id.humidite);
-        Fieldco2=(EditText)findViewById(R.id.co2);
-        FieldTemp_eau=(EditText)findViewById(R.id.temp_eau);
-        FieldHumidite_sol=(EditText)findViewById(R.id.hum_sol);
-        FieldLumiere=(EditText)findViewById(R.id.lumiere);
-
-        label_temp=(TextView) findViewById(R.id.label_temperature);
-        label_temp_eau=(TextView) findViewById(R.id.label_temp_eau);
-        label_co2=(TextView) findViewById(R.id.label_co2);
-        label_humid=(TextView) findViewById(R.id.label_humidite);
-        label_humid_sol=(TextView) findViewById(R.id.label_hum_sol);
-        label_lumiere=(TextView) findViewById(R.id.label_lumiere);
-        setfocus(FieldTemperature,label_temp);
-        setfocus(FieldTemp_eau,label_temp_eau);
-        setfocus(FieldHumidite,label_humid);
-        setfocus(FieldHumidite_sol,label_humid_sol);
-        setfocus(FieldLumiere,label_lumiere);
-        setfocus(Fieldco2,label_co2);
-
         nombre_periode=(TextView)findViewById(R.id.label_activity) ;
         Intent intent = getIntent();
        message = intent.getStringExtra("KEY");

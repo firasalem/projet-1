@@ -23,18 +23,21 @@
             android:minHeight="150dp"
             android:textAlignment="center"
             app:titleTextColor="@android:color/white"></android.support.v7.widget.Toolbar>
+
         <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-            android:layout_below="@id/toolbar"
             android:id="@+id/plant_spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="choisir un type de plante "
-            android:layout_centerHorizontal="true"
-            android:textColorHint="#05ab9a"
-            app:met_floatingLabel="normal"
-            android:ems="12"
+            android:layout_alignLeft="@id/label_fonct"
             android:layout_alignStart="@id/label_fonct"
-            android:layout_alignLeft="@id/label_fonct" />
+            android:layout_below="@id/toolbar"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/black"
+            android:ems="12"
+            android:hint="choisir un type de plante "
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            app:met_floatingLabel="normal" />
 
         <TextView
             android:layout_centerHorizontal="true"

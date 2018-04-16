@@ -16,6 +16,7 @@
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="20dp"
     >
 <TextView
     android:layout_width="wrap_content"
@@ -27,127 +28,101 @@ android:id="@+id/label_activity"
     android:layout_centerHorizontal="true"
     />
     <TextView
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
+        android:layout_below="@id/label_activity"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/label_temperature"
-        android:layout_below="@+id/label_activity"
         android:text="Température"
-        android:layout_alignStart="@id/temperature"
-        android:layout_alignLeft="@id/temperature" />
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/temperature"
-        android:layout_below="@+id/label_temperature"
-        android:hint="Température"
-        android:layout_centerHorizontal="true"
-        android:ems="13"
-        android:inputType="numberDecimal"
+        android:id="@+id/temp_label"
         />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <SeekBar
+        android:id="@+id/seekBar_temperature"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/label_humidite"
-        android:layout_below="@id/temperature"
+        android:max="100"
+        android:layout_below="@id/temp_label"
+        android:layout_marginBottom="20dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="Humidité"
-        android:layout_alignStart="@id/humidite"
-        android:layout_alignLeft="@id/humidite"
+        android:id="@+id/humid_label"
+        android:layout_below="@id/seekBar_temperature"
         />
-    <EditText
-        android:layout_width="wrap_content"
+    <SeekBar
+        android:id="@+id/seekBar_humidite"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/humidite"
-        android:layout_below="@+id/label_humidite"
-        android:hint="Humidité"
-        android:layout_centerHorizontal="true"
-        android:ems="13"
-        android:inputType="numberDecimal"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/label_lumiere"
-        android:layout_below="@id/humidite"
-        android:text="Lumiére ambiante"
-        android:layout_alignStart="@id/lumiere"
-        android:layout_alignLeft="@id/lumiere"
-        />
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lumiere"
-        android:layout_below="@+id/label_lumiere"
-        android:hint="Lumiére ambiante"
-        android:layout_centerHorizontal="true"
-        android:ems="13"
-        android:inputType="numberDecimal"
+        android:layout_below="@+id/humid_label"
+        android:max="100"
+        android:layout_marginBottom="20dp"
         />
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/label_hum_sol"
-        android:layout_below="@+id/lumiere"
+        android:text="lumiére ambiante"
+        android:id="@+id/lumiere_label"
+        android:layout_below="@id/seekBar_humidite"
+        />
+    <SeekBar
+        android:id="@+id/seekBar_lumiere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lumiere_label"
+        android:max="100"
+        android:layout_marginBottom="20dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="Humidité du sol"
-        android:layout_alignStart="@id/hum_sol"
-        android:layout_alignLeft="@id/hum_sol"
+        android:id="@+id/humid_sol_label"
+        android:layout_below="@id/seekBar_lumiere"
         />
-    <EditText
-        android:layout_width="wrap_content"
+    <SeekBar
+        android:id="@+id/seekBar_humidite_sol"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/hum_sol"
-        android:layout_below="@+id/label_hum_sol"
-        android:hint="Humidité du sol"
-        android:layout_centerHorizontal="true"
-        android:ems="13"
-        android:inputType="numberDecimal"
+        android:layout_below="@+id/humid_sol_label"
+        android:max="100"
+        android:layout_marginBottom="20dp"
         />
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/label_co2"
-        android:layout_below="@+id/hum_sol"
         android:text="CO2"
-        android:layout_alignStart="@id/co2"
-        android:layout_alignLeft="@id/co2"
+        android:id="@+id/co2_label"
+        android:layout_below="@id/seekBar_humidite_sol"
         />
-    <EditText
-        android:layout_width="wrap_content"
+    <SeekBar
+        android:id="@+id/seekBar_co2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/co2"
-        android:layout_below="@+id/label_co2"
-        android:hint="CO2"
-        android:layout_centerHorizontal="true"
-        android:ems="13"
-        android:inputType="numberDecimal"
+        android:layout_below="@+id/co2_label"
+        android:max="100"
+        android:layout_marginBottom="20dp"
         />
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/label_temp_eau"
-        android:layout_below="@id/co2"
         android:text="Température d'eau"
-        android:layout_alignStart="@id/temp_eau"
-        android:layout_alignLeft="@id/temp_eau"
+        android:id="@+id/temp_eau_label"
+        android:layout_below="@id/seekBar_co2"
         />
-    <EditText
-        android:layout_width="wrap_content"
+    <SeekBar
+        android:id="@+id/seekBar_temperature_eau"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/temp_eau"
-        android:layout_below="@+id/label_temp_eau"
-        android:hint="Température de l'eau"
-        android:layout_centerHorizontal="true"
-        android:ems="13"
-        android:inputType="numberDecimal"
+        android:layout_below="@+id/temp_eau_label"
+        android:max="100"
         />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Suivant"
         android:onClick="next"
-        android:layout_below="@id/temp_eau"
+        android:layout_below="@id/seekBar_temperature_eau"
         android:layout_centerHorizontal="true"
         style="@style/ButtonStyle"
         />

@@ -40,8 +40,6 @@
         android:ems="15"
         android:drawableLeft="@drawable/ic_person"
         android:drawableTint="@color/colorPrimaryDark"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
         />
 
     <TextView
@@ -67,8 +65,6 @@
         android:inputType="textPersonName"
         android:drawableLeft="@drawable/ic_person"
         android:drawableTint="@color/colorPrimaryDark"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
         />
     <TextView
         android:id="@+id/cin_label"
@@ -93,8 +89,6 @@
         android:inputType="number"
         android:drawableLeft="@drawable/ic_cin"
         android:drawableTint="@color/colorPrimaryDark"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
         />
     <TextView
         android:id="@+id/numero_label"
@@ -119,8 +113,6 @@
         android:inputType="number"
         android:drawableLeft="@drawable/ic_call"
         android:drawableTint="@color/colorPrimaryDark"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
         />
 
 

@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.khaireddine.mygreenhouse">
 
+    <!-- To access Google+ APIs: -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,6 +22,7 @@
         </activity>
         <activity
             android:name=".Connexion"
+            android:label=" "
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Inscrit_info_personnel"
@@ -48,7 +52,11 @@
             android:name=".Mes_plantes"
             android:label="@string/title_activity_mes_plantes"
             android:parentActivityName=".Accueil"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.khaireddine.mygreenhouse.Accueil" />
+        </activity>
         <activity
             android:name=".Ajouter_Serre"
             android:label="Nouveau serre"
@@ -64,17 +72,25 @@
             android:parentActivityName=".Accueil"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Gerer_Serre"
-            android:label="Gerer ma serre"
-            android:parentActivityName=".Accueil"
-            android:theme="@style/AppTheme" />
-        <activity
             android:name=".Mode_fonctionnement"
             android:label="Mode de fonctionnement"
             android:parentActivityName=".Accueil"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Rapports" android:theme="@style/AppTheme" android:parentActivityName=".Accueil" android:label="Rapport"/>
-        <activity android:name=".Cycle_Vie" android:label="Cycle de vie et besoins" android:theme="@style/AppTheme" android:parentActivityName=".Ajouter_plantes"></activity>
+        <activity
+            android:name=".Cycle_Vie"
+            android:label="Cycle de vie et besoins"
+            android:parentActivityName=".Ajouter_plantes"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Manupiler"
+            android:label="Gerer Serres"
+            android:parentActivityName=".Accueil"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".Rapports_Serre"
+            android:label="@string/title_activity_rapports__serre"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
