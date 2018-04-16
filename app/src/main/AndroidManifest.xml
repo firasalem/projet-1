@@ -40,7 +40,7 @@
             android:label="@string/title_activity_accueil"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Mes_Serres"
+            android:name=".Mes_Seres"
             android:label="@string/title_activity_mes__serres"
             android:parentActivityName=".Accueil"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -73,8 +73,18 @@
             android:label="Mode de fonctionnement"
             android:parentActivityName=".Accueil"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Rapports" android:theme="@style/AppTheme" android:parentActivityName=".Accueil" android:label="Rapport"/>
-        <activity android:name=".Cycle_Vie" android:label="Cycle de vie et besoins" android:theme="@style/AppTheme" android:parentActivityName=".Ajouter_plantes"></activity>
+        <activity
+            android:name=".Rapports"
+            android:label="Rapport"
+            android:parentActivityName=".Accueil"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Cycle_Vie"
+            android:label="Cycle de vie et besoins"
+            android:parentActivityName=".Ajouter_plantes"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".information_serrre" android:theme="@style/AppTheme"
+            android:parentActivityName=".Mes_Seres"></activity>
     </application>
 
 </manifest>

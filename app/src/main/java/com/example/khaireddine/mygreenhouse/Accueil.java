@@ -98,7 +98,7 @@ public class Accueil extends AppCompatActivity
         }
         else if (id == R.id.nav_serre)
         {
-            Intent intent_rapports = new Intent(this, Mes_Serres.class);
+            Intent intent_rapports = new Intent(this, Mes_Seres.class);
             startActivity(intent_rapports);
 
         }
