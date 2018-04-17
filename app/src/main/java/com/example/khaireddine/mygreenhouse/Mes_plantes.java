@@ -11,15 +11,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Mes_plantes extends AppCompatActivity {
-    private final LinkedList<String> mWordList = new LinkedList<>();
-    private final LinkedList<String> famille = new LinkedList<>();
-    private final LinkedList<String> cycle = new LinkedList<>();
-    private int mCount = 0;
-    private RecyclerView mRecyclerView;
-    private adapter_plante mAdapter;
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager layoutManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,22 +35,40 @@ public class Mes_plantes extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        recyclerView = (RecyclerView) findViewById(R.id.list);
+        // use this setting to
+        // improve performance if you know that changes
+        // in content do not change the layout size
+        // of the RecyclerView
+        recyclerView.setHasFixedSize(true);
+        // use a linear layout manager
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
 
-        for (int i = 0; i < 20; i++) {
+        List<String> input = new ArrayList<>();
 
-            mWordList.addLast("nom plante " + mCount++);
-            famille.addLast("famille " + mCount++);
-            cycle.addLast("cycle " + mCount++);
-            Log.d("WordList", mWordList.getLast());
-        }
-        // Get a handle to the RecyclerView.
-        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
-// Create an adapter and supply the data to be displayed.
-        mAdapter = new adapter_plante(this, mWordList,famille,cycle);
-// Connect the adapter with the RecyclerView.
-        mRecyclerView.setAdapter(mAdapter);
-// Give the RecyclerView a default layout manager.
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        input.add("Tomate");
+        input.add("orange");
+        input.add("firas");
+        input.add("Tdddsqe");
+        input.add("Txxxx");
+        input.add("Tomate");
+        input.add("orange");
+        input.add("firas");
+        input.add("Tdddsqe");
+        input.add("Txxxx");
+        input.add("Tomate");
+        input.add("orange");
+        input.add("firas");
+        input.add("Tdddsqe");
+        input.add("Txxxx");
+
+
+
+        // define an adapter
+        mAdapter = new MyAdapter(input);
+        recyclerView.setAdapter(mAdapter);
     }
+
 
 }

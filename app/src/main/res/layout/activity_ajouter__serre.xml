@@ -1,9 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context="com.example.khaireddine.mygreenhouse.Ajouter_Serre">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/label_Nom_Serre"
+        android:text="Nom serre"
+        android:layout_alignStart="@id/nom_serre"
+        android:layout_alignLeft="@id/nom_serre" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nom_serre"
+        android:layout_below="@+id/label_Nom_Serre"
+        android:hint="Nom Serre"
+        android:layout_centerHorizontal="true"
+        android:ems="13"
+        android:inputType="numberDecimal"
+        />
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/label_hauteur"
+        android:layout_below="@id/nom_serre"
+        android:text="Hauteur"
+        android:layout_alignStart="@id/hauteur"
+        android:layout_alignLeft="@id/hauteur"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hauteur"
+        android:layout_below="@+id/label_hauteur"
+        android:hint="hauteur"
+        android:layout_centerHorizontal="true"
+        android:ems="13"
+        android:inputType="numberDecimal"
+        />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/label_nombre_plateau"
+        android:layout_below="@id/hauteur"
+        android:text="nombre plateau"
+        android:layout_alignStart="@id/nombre_plateau"
+        android:layout_alignLeft="@id/nombre_plateau"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nombre_plateau"
+        android:layout_below="@+id/label_nombre_plateau"
+        android:hint="nombre_plateau"
+        android:layout_centerHorizontal="true"
+        android:ems="13"
+        android:inputType="numberDecimal"
+        />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/label_adr"
+        android:layout_below="@+id/nombre_plateau"
+        android:text="Adresse"
+        android:layout_alignStart="@id/adr"
+        android:layout_alignLeft="@id/adr" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/adr"
+        android:layout_below="@+id/label_adr"
+        android:hint="Adresse"
+        android:layout_centerHorizontal="true"
+        android:ems="13"
+
+        />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/fct"
+    android:text="fonctionnement"
+    android:layout_below="@+id/adr"
+    android:layout_alignStart="@id/adr"
+    android:layout_alignLeft="@id/adr"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="10dp"/>
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radiofct"
+        android:layout_alignStart="@+id/fct"
+        android:layout_below="@id/fct"
+        android:layout_alignLeft="@+id/fct">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/autofct"
+            android:text="automatique"
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Manuelle"
+            android:id="@+id/manufct"
+            />
+    </RadioGroup>
+    <Button
+        style="@style/ButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radiofct"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp"
+        android:onClick="nouveau_serre"
+        android:text="Suivant" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

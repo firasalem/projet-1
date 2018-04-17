@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.khaireddine.mygreenhouse">
 
     <!-- To access Google+ APIs: -->
@@ -44,7 +45,7 @@
             android:label="@string/title_activity_accueil"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Mes_Serres"
+            android:name=".Mes_Seres"
             android:label="@string/title_activity_mes__serres"
             android:parentActivityName=".Accueil"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -72,11 +73,6 @@
             android:parentActivityName=".Accueil"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Mode_fonctionnement"
-            android:label="Mode de fonctionnement"
-            android:parentActivityName=".Accueil"
-            android:theme="@style/AppTheme" />
-        <activity
             android:name=".Cycle_Vie"
             android:label="Cycle de vie et besoins"
             android:parentActivityName=".Ajouter_plantes"
@@ -94,6 +90,16 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".Cycle_Vie"
+            android:label="Cycle de vie et besoins"
+            android:parentActivityName=".Ajouter_plantes"
+            android:theme="@style/AppTheme"
+            tools:ignore="DuplicateActivity" />
+
+        <activity android:name=".information_serrre" android:theme="@style/AppTheme"
+            android:parentActivityName=".Mes_Seres"></activity>
+
     </application>
 
 </manifest>

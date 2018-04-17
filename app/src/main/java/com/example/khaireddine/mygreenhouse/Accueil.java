@@ -110,4 +110,5 @@ public class Accueil extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }
