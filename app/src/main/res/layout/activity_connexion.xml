@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="false"
+
     android:focusable="true"
     android:focusableInTouchMode="true"
     tools:context="com.example.khaireddine.mygreenhouse.Connexion">
@@ -44,20 +44,27 @@
             android:layout_below="@+id/mail-label"
             android:layout_centerHorizontal="true"
             android:drawableLeft="@drawable/ic_mail"
-            android:drawableTint="@color/colorPrimaryDark"
-            android:ems="15"
+            android:drawableTint="@color/colorAccent"
+            android:ems="13"
             android:hint="Adresse mail"
             android:inputType="textEmailAddress"
-            android:textColorHint="#000000"
             />
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mail"
+            android:layout_alignStart="@id/mail"
+            android:textColor="@color/red"
+            android:visibility="invisible"
+            android:id="@+id/erreur_mail"
+            android:layout_alignLeft="@id/mail" />
         <TextView
             android:id="@+id/password-label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/mail"
-            android:layout_alignStart="@id/mail"
-            android:layout_below="@id/mail"
+            android:layout_alignLeft="@id/erreur_mail"
+            android:layout_alignStart="@id/erreur_mail"
+            android:layout_below="@id/erreur_mail"
             android:text="Mot de passe"
             android:textSize="15dp"
             android:visibility="invisible" />
@@ -69,12 +76,11 @@
             android:layout_below="@id/password-label"
             android:layout_centerHorizontal="true"
             android:drawableLeft="@drawable/ic_password"
-            android:drawableTint="@color/colorPrimaryDark"
-            android:ems="15"
+            android:drawableTint="@color/colorAccent"
+            android:ems="13"
             android:hint="Mot de passe"
-            android:onClick="To_connexion"
-            android:inputType="textPassword"
-            android:textColorHint="#000000" />
+            android:inputType="textPassword" />
+
 
         <Button
             android:id="@+id/connecter"
@@ -85,6 +91,15 @@
             style="@style/ButtonStyle"
             android:layout_marginTop="20dp"
             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/connecter"
+
+            android:textColor="@color/red"
+            android:visibility="invisible"
+            android:id="@+id/erreur"
+            android:layout_centerHorizontal="true" />
 
         <TextView
             android:layout_marginTop="10dp"

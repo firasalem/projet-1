@@ -117,22 +117,17 @@ Spinner spinner_serre = (Spinner) findViewById(R.id.serre_spinner);
                                  Bundle savedInstanceState) {View rootView;
 
             switch (getArguments().getInt(ARG_SECTION_NUMBER))
-            {case 1:  rootView = inflater.inflate(R.layout.fragment_temperature, container, false);
-                GraphView graph = (GraphView)rootView.findViewById(R.id.graph);
-                LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[] {
-                        new DataPoint(0, 1),
-                        new DataPoint(1, 5),
-                        new DataPoint(2, 3)});
-                graph.addSeries(series);
+            {case 0:  rootView = inflater.inflate(R.layout.fragment_temperature, container, false);
                 return rootView;
-                case 2:rootView = inflater.inflate(R.layout.fragment_humidite, container, false);
+                case 1:rootView = inflater.inflate(R.layout.fragment_humidite, container, false);
                     return rootView;
-                case 3:rootView = inflater.inflate(R.layout.fragment_lumiere, container, false);
+                case 2:rootView = inflater.inflate(R.layout.fragment_lumiere, container, false);
                     return rootView;
-                case 4:rootView = inflater.inflate(R.layout.fragment_humidite_sol, container, false);
+                case 3:rootView = inflater.inflate(R.layout.fragment_humidite_sol, container, false);
                     return rootView;
-                    default:rootView = inflater.inflate(R.layout.fragment_co2, container, false);
-                        return rootView;
+                case 4 :rootView = inflater.inflate(R.layout.fragment_co2, container, false);
+                    return rootView;
+                    default:return null;
             }
 
 

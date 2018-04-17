@@ -3,6 +3,7 @@ package com.example.khaireddine.mygreenhouse;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -17,6 +18,10 @@ public class Inscrit_info_compte extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inscrit_info_compte);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_compte);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         FieldEMail = (EditText) findViewById(R.id.mail_inscrit);
         FieldMdp = (EditText) findViewById(R.id.password_inscrit);
         FieldMdp2 = (EditText) findViewById(R.id.password2_inscrit);
@@ -46,7 +51,7 @@ public class Inscrit_info_compte extends AppCompatActivity {
 
     }
     public void To_Serre_info(View view) {
-        Intent intent_inscription = new Intent(this, Inscrit_info_serre.class);
+        Intent intent_inscription = new Intent(this, Accueil.class);
         startActivity(intent_inscription);
     }
 }

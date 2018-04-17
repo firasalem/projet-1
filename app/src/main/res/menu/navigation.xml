@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_temperature"
+        android:icon="@drawable/temperature"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_humidite"
+        android:icon="@drawable/humidity"
+        android:title="@string/title_dashboard" />
+
+    <item
+        android:id="@+id/navigation_lumiere"
+        android:icon="@drawable/sun"
+        android:title="@string/title_notifications" />
+    <item
+        android:id="@+id/navigation_sol"
+        android:icon="@drawable/irrigation"
+        android:title="Humidite sol" />
+    <item
+        android:id="@+id/navigation_co2"
+        android:icon="@drawable/co2"
+        android:title="CO2" />
+
+
+</menu>

@@ -72,10 +72,5 @@
             android:layout_alignStart="@+id/cardView_temp"
             android:layout_alignLeft="@+id/cardView_temp"
             />
-        <com.jjoe64.graphview.GraphView
-            android:layout_width="match_parent"
-            android:layout_height="200dip"
-            android:id="@+id/graph"
-            android:layout_below="@id/switch1"/>
 </RelativeLayout>
  </FrameLayout>

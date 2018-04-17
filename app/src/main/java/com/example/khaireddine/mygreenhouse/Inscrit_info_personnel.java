@@ -3,6 +3,7 @@ package com.example.khaireddine.mygreenhouse;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -14,6 +15,10 @@ public class Inscrit_info_personnel extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inscrit_info_personnel);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         FieldCin=(EditText)findViewById(R.id.cin);
         FieldNumber=(EditText)findViewById(R.id.numero);
         FieldNom=(EditText)findViewById(R.id.nom);
@@ -26,6 +31,7 @@ public class Inscrit_info_personnel extends AppCompatActivity {
         setfocus(FieldPrenom,label_prenom);
         setfocus(FieldCin,label_cin);
         setfocus(FieldNumber,label_numero);
+
     }
     public  void setfocus(final EditText field, final TextView label)
     {
@@ -48,7 +54,7 @@ public class Inscrit_info_personnel extends AppCompatActivity {
     }
 
     public void To_compte_info(View view) {
-        Intent intent_inscription = new Intent(this,Inscrit_info_compte.class);
-        startActivity(intent_inscription);
+        Intent intent_Accueil = new Intent(this,Inscrit_info_compte.class);
+        startActivity(intent_Accueil);
     }
 }

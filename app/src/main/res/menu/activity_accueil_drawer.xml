@@ -36,13 +36,6 @@
                 android:iconTintMode="add"
                 />
             <item
-                android:id="@+id/nav_mode"
-                android:icon="@drawable/ic_robot"
-                android:title="mode de fonctionnement"
-                android:iconTint="@color/colorAccent"
-                android:iconTintMode="add"
-                />
-            <item
             android:id="@+id/nav_gerer"
             android:icon="@drawable/ic_farmer1"
             android:title="Gerer serres"

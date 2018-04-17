@@ -5,11 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.khaireddine.mygreenhouse.Inscrit_info_compte"
-    android:layout_marginRight="10dp"
-    android:layout_marginLeft="10dp"
+
     android:focusable="true"
     android:focusableInTouchMode="true"
     >
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar_compte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:minHeight="150dp"
+        android:textAlignment="center"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        >
+        <ImageView
+
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/ic_comptee"
+
+            />
+
+        <android.support.v7.widget.Toolbar
+            android:layout_below="@id/appbar_compte"
+            android:id="@+id/toolbar_compte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="Créer un compte"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            ></android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/appbar_compte"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        >
     <TextView
         android:id="@+id/label_mail_inscrit"
         android:layout_width="wrap_content"
@@ -28,12 +64,10 @@
         android:layout_height="wrap_content"
         android:hint="Adresse Email"
         android:layout_centerHorizontal="true"
-        android:ems="15"
+        android:ems="13"
         android:inputType="textEmailAddress"
         android:drawableLeft="@drawable/ic_mail"
         android:drawableTint="@color/colorPrimaryDark"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
         />
     <TextView
         android:id="@+id/label_password_inscrit"
@@ -54,12 +88,10 @@
         android:layout_height="wrap_content"
         android:hint="Mot de passe"
         android:layout_centerHorizontal="true"
-        android:ems="15"
+        android:ems="13"
         android:inputType="textPassword"
         android:drawableLeft="@drawable/ic_lock"
         android:drawableTint="@color/colorPrimaryDark"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
         />
 
     <TextView
@@ -79,15 +111,14 @@
         android:layout_below="@+id/label_password2_inscrit"
         android:drawableLeft="@drawable/ic_lock"
         android:drawableTint="@color/colorPrimaryDark"
-        android:ems="15"
+        android:ems="13"
         android:hint="Confirmez votre mot de passe"
         android:layout_centerHorizontal="true"
         android:inputType="textPassword"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
         />
 
     <Button
+        android:layout_marginTop="20dp"
         android:id="@+id/suivant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -96,6 +127,6 @@
         android:text="Suivant"
         style="@style/ButtonStyle"
         />
-
+    </RelativeLayout>
 </RelativeLayout>
 

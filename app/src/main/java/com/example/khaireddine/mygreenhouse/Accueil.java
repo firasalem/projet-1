@@ -47,12 +47,7 @@ public class Accueil extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.accueil, menu);
-        return true;
-    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -77,7 +72,7 @@ public class Accueil extends AppCompatActivity
 
         if (id == R.id.nav_rapports)
         {
-            Intent intent_rapports = new Intent(this, Rapports_Serre.class);
+            Intent intent_rapports = new Intent(this, Rapports.class);
             startActivity(intent_rapports);
         }
         else if (id == R.id.nav_mes_serre)
@@ -100,11 +95,6 @@ public class Accueil extends AppCompatActivity
         {
             Intent intent_rapports = new Intent(this, Ajouter_plantes.class);
             startActivity(intent_rapports);
-        }
-        else if (id == R.id.nav_mode)
-        {
-            Intent intent_mode = new Intent(this, Mode_fonctionnement.class);
-            startActivity(intent_mode);
         }
         else if (id == R.id.nav_lancer_culture)
         {

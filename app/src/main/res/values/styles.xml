@@ -34,9 +34,10 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
-
     <style name="SpinnerTheme">
         <item name="android:background">@drawable/spinner_icon</item>
+    </style>
+    <style name="SpinnerTheme1">
+        <item name="android:background">@drawable/spinner_back</item>
     </style>
 </resources>

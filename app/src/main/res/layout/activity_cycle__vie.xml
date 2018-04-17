@@ -24,7 +24,6 @@
     android:text="Periode n"
 android:id="@+id/label_activity"
     android:textSize="30dp"
-    android:textColor="@color/black"
     android:layout_centerHorizontal="true"
     />
     <TextView
