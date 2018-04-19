@@ -89,16 +89,13 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".Cycle_Vie"
             android:label="Cycle de vie et besoins"
             android:parentActivityName=".Ajouter_plantes"
             android:theme="@style/AppTheme"
             tools:ignore="DuplicateActivity" />
-
-        <activity android:name=".information_serrre" android:theme="@style/AppTheme"
-            android:parentActivityName=".Mes_Seres"></activity>
 
     </application>
 

@@ -1,22 +1,35 @@
 package com.example.khaireddine.mygreenhouse;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+
+import com.applandeo.materialcalendarview.CalendarView;
+import com.applandeo.materialcalendarview.EventDay;
+import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 
 public class Accueil extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    String[] colors_array = {"Serre 1", "Serre 2", "Serre 3", "Serre 4","Serre 5"};
     TextView username;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +48,42 @@ public class Accueil extends AppCompatActivity
         View headerView = navigationView.getHeaderView(0);
         username = (TextView) headerView.findViewById(R.id.user);
         username.setText("Firas&Khairi");
+
+        List<EventDay> events = new ArrayList<>();
+        final Calendar calendar = Calendar.getInstance();
+        calendar.set(2018,3,22);
+        Calendar calendar1 = Calendar.getInstance();
+        calendar1.set(2018,3,11);
+        events.add(new EventDay(calendar, R.drawable.star));
+        events.add(new EventDay(calendar1, R.drawable.star));
+        CalendarView calendarView = (CalendarView) findViewById(R.id.calendarView);
+        calendarView.showCurrentMonthPage();
+        calendarView.setEvents(events);
+        calendarView.setOnDayClickListener(new OnDayClickListener() {
+            @Override
+            public void onDayClick(EventDay eventDay) {
+                Calendar clickedDayCalendar = eventDay.getCalendar();
+                if (clickedDayCalendar.equals(calendar))
+                {Dialog alert=onCreateDialog();
+                    alert.show();}
+            }
+        });
+
+
     }
 
+    public Dialog onCreateDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(Accueil.this);
+        builder.setTitle("Evennement de ce jour");
+        builder.setIcon(R.drawable.calendrier);
+        builder.setItems(colors_array, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // The 'which' argument contains the index position
+                        // of the selected item
+                    }
+                });
+        return builder.create();
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -77,7 +124,7 @@ public class Accueil extends AppCompatActivity
         }
         else if (id == R.id.nav_mes_serre)
         {
-            Intent intent_plantes = new Intent(this, Mes_Serres.class);
+            Intent intent_plantes = new Intent(this, Mes_Seres.class);
             startActivity(intent_plantes);
         }
         else if (id == R.id.nav_types)

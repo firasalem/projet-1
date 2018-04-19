@@ -5,10 +5,10 @@
     <item
         android:id="@+id/nav_rapports"
         android:icon="@drawable/file"
-        android:title="Rapports" />
+        android:title="Historique" />
     <item
         android:id="@+id/nav_mes_serre"
-        android:icon="@drawable/greenhouse"
+        android:icon="@drawable/ic_greenhouse"
         android:title="Mes serres" />
     <item
         android:id="@+id/nav_types"
@@ -41,7 +41,10 @@
             android:title="Gerer serres"
             android:iconTintMode="add"
             />
-
+            <item
+                android:id="@+id/nav_calendrier"
+                android:icon="@drawable/file"
+                android:title="Calendrier" />
         </menu>
     </item>
 
