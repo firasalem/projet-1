@@ -16,9 +16,9 @@ public class serreadapter extends BaseAdapter {
     private Context context;
     private final String[] mobileValues;
 
-    public serreadapter(Context context, List<String> mobileValues) {
+    public serreadapter(Context context, String[]mobileValues) {
         this.context = context;
-        this.mobileValues = mobileValues.toArray(new String[0]);
+        this.mobileValues = mobileValues;
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {

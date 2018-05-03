@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MyGreenhouse.iml" filepath="$PROJECT_DIR$/MyGreenhouse.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\PFE\Android\MyGreenhouse\projet-1.iml" filepath="C:\PFE\Android\MyGreenhouse\projet-1.iml" />
     </modules>
   </component>
 </project>

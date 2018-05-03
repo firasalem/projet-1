@@ -40,4 +40,7 @@
     <style name="SpinnerTheme1">
         <item name="android:background">@drawable/spinner_back</item>
     </style>
+    <style name="login_backround">
+        <item name="android:background">@drawable/login_form</item>
+    </style>
 </resources>

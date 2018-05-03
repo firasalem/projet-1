@@ -26,14 +26,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Connexion"
-            android:label=" "
-            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".Inscrit_info_personnel"
             android:label="Informations personnelles"
-            android:parentActivityName=".Connexion"
+            android:parentActivityName=".Login"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Inscrit_info_compte"
@@ -84,7 +81,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Rapports"
-            android:label="@string/title_activity_main2"
+            android:label="Historique"
+            android:parentActivityName=".Accueil"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".LoginActivity"
@@ -96,7 +94,27 @@
             android:parentActivityName=".Ajouter_plantes"
             android:theme="@style/AppTheme"
             tools:ignore="DuplicateActivity" />
+        <activity
+            android:name=".Login"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".information_serrre"
+            android:label="Informations"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".Mes_Seres"
+            />
+        <activity android:name=".Notification"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".Accueil"
+            android:label="Notifications"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

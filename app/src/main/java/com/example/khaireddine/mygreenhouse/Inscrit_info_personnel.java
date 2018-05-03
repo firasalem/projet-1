@@ -4,13 +4,17 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.lang.reflect.Field;
+import java.text.Format;
+
 public class Inscrit_info_personnel extends AppCompatActivity {
-    EditText FieldMail,FieldPassword,FieldPassword2,FieldCin,FieldNumber,FieldNom,FieldPrenom;
-    TextView label_mail,label_password,label_password2,label_cin,label_numero,label_nom,label_prenom;
+    EditText FieldCin,FieldNumber,FieldNom,FieldPrenom;
+    String cin,number,nom,prenom;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,38 +27,30 @@ public class Inscrit_info_personnel extends AppCompatActivity {
         FieldNumber=(EditText)findViewById(R.id.numero);
         FieldNom=(EditText)findViewById(R.id.nom);
         FieldPrenom=(EditText)findViewById(R.id.prenom);
-        label_cin=(TextView) findViewById(R.id.cin_label);
-        label_nom=(TextView) findViewById(R.id.nom_label);
-        label_numero=(TextView) findViewById(R.id.numero_label);
-        label_prenom=(TextView) findViewById(R.id.prenom_label);
-        setfocus(FieldNom,label_nom);
-        setfocus(FieldPrenom,label_prenom);
-        setfocus(FieldCin,label_cin);
-        setfocus(FieldNumber,label_numero);
-
-    }
-    public  void setfocus(final EditText field, final TextView label)
-    {
-        final String hint= label.getText().toString();
-        field.setOnFocusChangeListener(new View.OnFocusChangeListener(){
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus==true)
-                {
-                    label.setVisibility(View.VISIBLE);
-                    field.setHint("");
-                }
-                else
-                { label.setVisibility(View.INVISIBLE);
-                    field.setHint(hint);}
-
-            }});
-
 
     }
 
-    public void To_compte_info(View view) {
-        Intent intent_Accueil = new Intent(this,Inscrit_info_compte.class);
-        startActivity(intent_Accueil);
-    }
+    public void To_compte_info(View view)
+    {boolean verif=true;
+    FieldNumber.setError(null);
+        FieldNom.setError(null);
+        FieldPrenom.setError(null);
+        FieldCin.setError(null);
+        nom= FieldNom.getText().toString();
+        prenom=FieldPrenom.getText().toString();
+        cin=FieldCin.getText().toString();
+        number=FieldNumber.getText().toString();
+        if (TextUtils.isEmpty(nom)) {FieldNom.setError("Champ vide");verif=false;}
+        if(TextUtils.isEmpty(prenom)) {FieldPrenom.setError("Champ vide");verif=false;}
+        if (TextUtils.isEmpty(cin)){FieldCin.setError("Champ vide");verif=false;}
+        else if(cin.length()!=8){FieldCin.setError("CIN invalide");verif=false;}
+        if (TextUtils.isEmpty(number)){FieldNumber.setError("Champ vide");verif=false;}
+        else if(number.length()!=8){FieldNumber.setError("Numero invalide");verif=false;}
+        if (verif){  Intent intent_Accueil = new Intent(this,Inscrit_info_compte.class);
+                intent_Accueil.putExtra("KEY_nom",nom);
+                intent_Accueil.putExtra("KEY_prenom",prenom);
+                intent_Accueil.putExtra("KEY_numero",number);
+                intent_Accueil.putExtra("KEY_cin",cin);
+                startActivity(intent_Accueil);}
+}
 }

@@ -2,13 +2,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.khaireddine.mygreenhouse.Temperature">
+    tools:context="com.example.khaireddine.mygreenhouse.Temperature"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    >
     <!-- TODO: Update blank fragment layout -->
 <RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
         <android.support.v7.widget.CardView
-            android:layout_width="500dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
@@ -60,17 +63,41 @@
         </android.support.v7.widget.CardView>
 
         <Switch
-            android:id="@+id/switch1"
+            android:id="@+id/switch_temp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/cardView_temp"
-            android:text="Activer ventilo                     "
+            android:text="Activer le cliamtiseur                 "
             android:textSize="18dp"
             android:layout_marginTop="24dp"
             android:switchPadding="10dp"
             android:layout_alignStart="@+id/cardView_temp"
             android:layout_alignLeft="@+id/cardView_temp"
             />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/switch_temp"
+        android:id="@+id/label_seekbar"
+        android:layout_alignStart="@id/switch_temp"
+        android:text="Valeur climatisation"
+        android:layout_marginLeft="20dp"
+        android:layout_alignLeft="@id/switch_temp" />
+
+    <SeekBar
+        android:layout_marginTop="10dp"
+        android:id="@+id/seekBar_clima"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/label_seekbar"
+        android:max="50"
+        android:min="-50"
+        android:layout_alignStart="@id/switch_temp"
+        android:layout_alignLeft="@id/switch_temp" />
+
 </RelativeLayout>
- </FrameLayout>
+
+
+</FrameLayout>

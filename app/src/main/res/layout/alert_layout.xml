@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:numpad="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Nombre de jours du periode :" />
+        <com.example.khaireddine.mygreenhouse.MyNumberPicker
+            android:layout_marginLeft="10dp"
+            android:solidColor="@color/colorAccent"
+            android:id="@+id/picker_nbr_jours_periode"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:scrollbarSize="24dp"
+            android:scrollIndicators="right"
+            max="150"
+            min="0"
+            >
+
+        </com.example.khaireddine.mygreenhouse.MyNumberPicker>
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+        <TextView
+            android:text="Valeur Température :"
+            android:id="@+id/label_seek_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="0"
+            android:drawableRight="@drawable/celsus_vert"
+            android:textColor="@color/colorAccent"
+            android:textSize="20dp"
+            android:id="@+id/val_seek_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/temp_seek"
+            android:thumb="@drawable/ic_hand"
+            android:min="0"
+            android:max="50"
+            />
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:text="Valeur humidité:"
+                android:id="@+id/label_seek_humid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="0"
+                android:drawableRight="@drawable/porcentage_vert"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp"
+                android:id="@+id/val_seek_humid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/humid_seek"
+            android:thumb="@drawable/ic_hand"
+            android:min="0"
+            android:max="100"
+            />
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:text="pourcentage lumiére :"
+                android:id="@+id/label_seek_lum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="0"
+                android:drawableRight="@drawable/porcentage_vert"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp"
+                android:id="@+id/val_seek_lum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <SeekBar
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lum_seek"
+            android:thumb="@drawable/ic_hand"
+            android:min="0"
+            android:max="100"
+            />
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:text="Valeur humidité sol :"
+                android:id="@+id/label_seek_humid_sol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="0"
+                android:drawableRight="@drawable/porcentage_vert"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp"
+                android:id="@+id/val_seek_humid_sol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/humid_sol_seek"
+            android:thumb="@drawable/ic_hand"
+            android:min="0"
+            android:max="100"
+            />
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:text="Pourcentage CO2:"
+                android:id="@+id/label_seek_co2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="0"
+                android:drawableRight="@drawable/porcentage_vert"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp"
+                android:id="@+id/val_seek_co2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <SeekBar
+            android:thumb="@drawable/ic_hand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/co2_seek"
+            android:min="0"
+            android:max="100"
+            />
+    </LinearLayout>

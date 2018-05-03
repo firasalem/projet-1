@@ -1,0 +1,130 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="com.example.khaireddine.mygreenhouse.Login"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/bar"
+    >
+
+    <!-- Login progress -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        android:background="@drawable/ic_1"
+        android:minHeight="150dp"
+        android:textAlignment="center"
+        ></android.support.v7.widget.Toolbar>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/erreur"
+        android:visibility="invisible"
+        android:layout_gravity="center_horizontal"
+        android:text="erreur"
+        android:textColor="@color/red"
+        />
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="24dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/email_login_form"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            style="@style/login_backround"
+            >
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                >
+
+                <AutoCompleteTextView
+                    android:drawableLeft="@drawable/ic_mail"
+                    android:drawableTint="@color/colorAccent"
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="13"
+                    android:hint="@string/prompt_email"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="13"
+                    android:drawableLeft="@drawable/ic_password"
+                    android:drawableTint="@color/colorAccent"
+                    android:hint="Mot de passe"
+                    android:imeActionId="6"
+                    android:imeActionLabel="Connection"
+                    android:imeOptions="actionUnspecified"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:layout_marginTop="20dp"
+                android:id="@+id/se_connecter"
+                style="@style/ButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/erreur"
+                android:ems="12"
+                android:text="Se connecter"
+                />
+
+
+            <TextView
+                android:id="@+id/label_creer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="______ Si Vous n'avez pas un compte______" />
+
+            <Button
+                android:id="@+id/creer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bouton2"
+                android:ems="12"
+                android:onClick="To_Inscription"
+                android:text="Créer un compte "
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textSize="20dp"
+
+                />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

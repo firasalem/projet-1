@@ -13,14 +13,14 @@
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:text="@string/title_home"
+        android:text=""
+        android:textColor="@color/colorAccent"
         />
     <com.jjoe64.graphview.GraphView
         android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:layout_below="@id/titlee"
         android:id="@+id/graph"
-
         />
 
         />

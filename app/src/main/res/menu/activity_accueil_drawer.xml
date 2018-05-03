@@ -41,10 +41,7 @@
             android:title="Gerer serres"
             android:iconTintMode="add"
             />
-            <item
-                android:id="@+id/nav_calendrier"
-                android:icon="@drawable/file"
-                android:title="Calendrier" />
+
         </menu>
     </item>
 

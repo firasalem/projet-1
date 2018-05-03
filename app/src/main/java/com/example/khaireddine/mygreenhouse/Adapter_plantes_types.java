@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class Adapter_plantes_types extends RecyclerView.Adapter<Adapter_plantes_types.ViewHolder> {
     private List<String> values;
 
     // Provide a reference to the views for each data item
@@ -43,14 +43,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(List<String> myDataset) {
+    public Adapter_plantes_types(List<String> myDataset) {
         values = myDataset;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
-                                                   int viewType) {
+    public Adapter_plantes_types.ViewHolder onCreateViewHolder(ViewGroup parent,
+                                                               int viewType) {
         // create a new view
         LayoutInflater inflater = LayoutInflater.from(
                 parent.getContext());
@@ -69,13 +69,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         final String name = values.get(position);
 
         holder.txtHeader.setText(name);
-        holder.txtHeader.setOnClickListener(new View.OnClickListener() {
+        /*holder.txtHeader.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 remove(position);
 
             }
-        });
+        });*/
 
         holder.txtFooter.setText( "voir description");
     }
