@@ -40,7 +40,7 @@ public class Ajouter_Serre extends AppCompatActivity {
     private RadioGroup radiogrp;
 
 
-String mode;
+String mode="manuelle";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,14 +61,18 @@ radiogrp=(RadioGroup)findViewById(R.id.radiofct);
         add_serre(name);
     }
     private void add_serre(String user) throws UnsupportedEncodingException {
+        String Input_nom_serre;
+        String Input_nombre_plateau;
+        String Input_adresse;
+        String Input_surface;
         class Create_serre extends AsyncTask<String, String, String> {
             String result;
             private Context context;
             private int request = 0;
-            String Input_nom_serre;
+           /* String Input_nom_serre;
             String Input_nombre_plateau;
             String Input_adresse;
-            String Input_surface;
+            String Input_surface;*/
 
             //flag 0 means get and 1 means post.(By default it is get.)
             public Create_serre(Context context, int flag) {
@@ -102,22 +106,7 @@ radiogrp=(RadioGroup)findViewById(R.id.radiofct);
             }
             @Override
             protected void onPostExecute(String result) {
-                Field_nom_serre.setError(null);
-                Field_nombre_plateau.setError(null);
-                Field_adresse.setError(null);
-                Field_surface.setError(null);
-                boolean verif=true;
-                Input_nom_serre=Field_nom_serre.getText().toString();
-                Input_nombre_plateau=Field_nombre_plateau.getText().toString();
-                Input_adresse=Field_adresse.getText().toString();
-                Input_surface=Field_surface.getText().toString();
-                if (TextUtils.isEmpty(Input_nom_serre)) {Field_nom_serre.setError("Champ vide");verif=false;}
-                if (TextUtils.isEmpty(Input_nombre_plateau)) {Field_nombre_plateau.setError("Champ vide");verif=false;}
-                if (TextUtils.isEmpty(Input_adresse)) {Field_adresse.setError("Champ vide");verif=false;}
-                if (TextUtils.isEmpty(Input_surface)) {Field_surface.setError("Champ vide");verif=false;}
-                if (verif)
-                {
-                    if (result.equals("ok"))
+               if (result.equals("ok"))
                     {
                         Intent intent_ajoutserre = new Intent(getApplicationContext(), Mes_Seres.class);
                         startActivity(intent_ajoutserre);
@@ -129,14 +118,28 @@ radiogrp=(RadioGroup)findViewById(R.id.radiofct);
                         Toast.makeText(getApplicationContext(),"Probléme de Connexion",Toast.LENGTH_SHORT).show();
                     }
 
-                }}}
+                }}//}
         String nom=Field_nom_serre.getText().toString();
         String surface=Field_surface.getText().toString();;
         String nbr_plat=Field_nombre_plateau.getText().toString();;
         String localisation= Field_adresse.getText().toString();
-
-        new Create_serre(this,0).execute("http://192.168.43.94/pfe/insertserre.php?nombre_plateau="+nbr_plat+"&surface="+surface+"&localisation="+localisation+"&fonctionnement="+mode+"&nom_serre="+ URLEncoder.encode(nom,"UTF-8")+"&username="+user);
-    }
+        Field_nom_serre.setError(null);
+        Field_nombre_plateau.setError(null);
+        Field_adresse.setError(null);
+        Field_surface.setError(null);
+        boolean verif=true;
+        Input_nom_serre=Field_nom_serre.getText().toString();
+        Input_nombre_plateau=Field_nombre_plateau.getText().toString();
+        Input_adresse=Field_adresse.getText().toString();
+        Input_surface=Field_surface.getText().toString();
+        if (TextUtils.isEmpty(Input_nom_serre)) {Field_nom_serre.setError("Champ vide");verif=false;}
+        if (TextUtils.isEmpty(Input_nombre_plateau)) {Field_nombre_plateau.setError("Champ vide");verif=false;}
+        if (TextUtils.isEmpty(Input_adresse)) {Field_adresse.setError("Champ vide");verif=false;}
+        if (TextUtils.isEmpty(Input_surface)) {Field_surface.setError("Champ vide");verif=false;}
+        if (verif) {
+            new Create_serre(this, 0).execute("http://192.168.43.94/pfe/insertserre.php?nombre_plateau=" + nbr_plat + "&surface=" + surface + "&localisation=" + localisation + "&fonctionnement=" + mode + "&nom_serre=" + URLEncoder.encode(nom, "UTF-8") + "&username=" + user);
+        }
+        }
 
 
     public void is_checked(View view) {
@@ -145,12 +148,10 @@ radiogrp=(RadioGroup)findViewById(R.id.radiofct);
             case R.id.auto:
                 if (checked)
                     mode="automatique";
-                Toast.makeText(this,mode,Toast.LENGTH_SHORT).show();
                 break;
             case R.id.manuelle:
                 if (checked)
                     mode="manuelle";
-                Toast.makeText(this,mode,Toast.LENGTH_SHORT).show();
                 break;
         }
     }}

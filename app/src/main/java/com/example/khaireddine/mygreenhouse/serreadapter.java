@@ -21,39 +21,31 @@ public class serreadapter extends BaseAdapter {
         this.mobileValues = mobileValues;
     }
 
-    public View getView(int position, View convertView, ViewGroup parent) {
 
+
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        View gridView;
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-        View gridView;
-
         if (convertView == null) {
 
             gridView = new View(context);
 
             // get layout from mobile.xml
             gridView = inflater.inflate(R.layout.itemserre, null);
-
             // set value into textview
-            TextView textView = (TextView) gridView
-                    .findViewById(R.id.grid_item_label);
-            textView.setText(mobileValues[position]);
-
-            // set image based on selected text
-            ImageView imageView = (ImageView) gridView
-                    .findViewById(R.id.grid_item_image);
-
-            String mobile = mobileValues[position];
-
-
-            imageView.setImageResource(R.drawable.item_greenhouse);
-
 
         } else {
             gridView = (View) convertView;
         }
+        TextView textView = (TextView) gridView.findViewById(R.id.grid_item_label);
+        textView.setText(mobileValues[position]);
+        // set image based on selected text
+        ImageView imageView = (ImageView) gridView.findViewById(R.id.grid_item_image);
 
+        imageView.setImageResource(R.drawable.item_greenhouse);
         return gridView;
     }
 
@@ -70,6 +62,7 @@ public class serreadapter extends BaseAdapter {
     @Override
     public long getItemId(int position) {
         return 0;
+
     }
 
 }

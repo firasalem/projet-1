@@ -25,6 +25,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,6 +47,7 @@ String name;
       // name=get_msg.getStringExtra("KEY_SERRE");
         SharedPreferences get_inf=getSharedPreferences("KEY_IDENTITY",MODE_PRIVATE);
         final String name=get_inf.getString("KEY_IDENTITY_INFO","");
+
         serres(name);
         FloatingActionButton add=(FloatingActionButton)findViewById(R.id.fab);
         //TODO: set alert dialog for serre information
@@ -123,6 +125,7 @@ String name;
         @Override
         protected void onPostExecute(String result) {
             try {
+               // Toast.makeText(getApplicationContext(),result,Toast.LENGTH_LONG).show();
                 loadIntoGridView(result);
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -161,7 +164,7 @@ String name;
                     String nom_serre=(String)arg0[0];
                     String username=(String)arg0[1];
 
-                    URL url = new URL("http://192.168.43.94/pfe/info_serre.php?nom="+nom_serre+"&username="+username);
+                    URL url = new URL("http://192.168.43.94/pfe/info_serre.php?nom_serre="+ URLEncoder.encode(nom_serre, "UTF-8")+"&username="+username);
 
                     //Opening the URL using HttpURLConnection
                     HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -205,7 +208,7 @@ String name;
     }
     private void loadIntoDialog_alert(String json) throws JSONException {
         JSONArray jsonArray = new JSONArray(json);
-        String[] serres_info = new String[7];
+        String[] serres_info = new String[8];
             JSONObject obj = jsonArray.getJSONObject(0);
             String identifient = obj.getString("nom_serre");
             serres_info[0] = "Localisation : "+obj.getString("localisation");
@@ -215,7 +218,7 @@ String name;
                 serres_info[3] ="Etat : Vide";
                 serres_info[5] =" ";
                 serres_info[6] =" ";
-
+                serres_info[7]="";
             }
             else {
                 serres_info[3] ="Etat : Utiliser";
@@ -223,9 +226,13 @@ String name;
                 String date=obj.getString("date_debut");
                 String format=date.substring(8,10)+"/"+date.substring(5,7)+"/"+date.substring(0,4);
                 serres_info[6] = "date de plantaion : "+format;
+
+                String date_fin=obj.getString("date_fin");
+                String format_fin=date_fin.substring(8,10)+"/"+date_fin.substring(5,7)+"/"+date_fin.substring(0,4);
+                serres_info[7] = "date de recoltation : "+format_fin;
             }
-        if (obj.getString("fonctionnement").equals("manuelle")) {serres_info[4] ="Mode de fonctionnement :Manuelle";}
-        else if (obj.getString("fonctionnement").equals("automatique")){serres_info[4] ="Mode de fonctionnement :Automatique";}
+        if (obj.getString("fonctionnement").equals("manuelle")) {serres_info[4] ="Fonctionnement :Manuelle";}
+        else if (obj.getString("fonctionnement").equals("automatique")){serres_info[4] ="Fonctionnement :Automatique";}
 
            else { serres_info[4] ="Mode de fonctionnement :Non defini";}
 

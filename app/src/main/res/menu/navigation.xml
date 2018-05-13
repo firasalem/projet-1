@@ -4,25 +4,25 @@
     <item
         android:id="@+id/navigation_temperature"
         android:icon="@drawable/temperature"
-        android:title="@string/title_home" />
+        android:title="Température" />
 
     <item
         android:id="@+id/navigation_humidite"
         android:icon="@drawable/humidity"
-        android:title="@string/title_dashboard" />
+        android:title="Humidité" />
 
     <item
         android:id="@+id/navigation_lumiere"
         android:icon="@drawable/sun"
-        android:title="@string/title_notifications" />
+        android:title="Lumiére ambiante" />
     <item
         android:id="@+id/navigation_sol"
         android:icon="@drawable/ic_irrigation"
-        android:title="Humidite sol" />
+        android:title="Humidite du sol" />
     <item
         android:id="@+id/navigation_co2"
         android:icon="@drawable/co2"
-        android:title="CO2" />
+        android:title="pourcentage CO2" />
 
 
 </menu>

@@ -57,6 +57,7 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
     TextView erreur;
+    SharedPreferences.Editor usser_editor;
     private View mProgressView;
     private View mLoginFormView;
     @Override
@@ -212,94 +213,94 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
     }
 
    //TODO:methode d'Authentification
-    private void auhentification() {
-        class CreateAccount extends AsyncTask<String, String, String> {
-            String result;
-            private Context context;
-            private int request = 0;
-            //flag 0 means get and 1 means post.(By default it is get.)
-            public CreateAccount(Context context, int flag) {
-                this.context = context;
-                this.request = flag;
-            }
-            @Override
-            protected String doInBackground(String[]arg0) {
-                try{
-                    String email=(String)arg0[0];
-                    String password=(String)arg0[1];
+   private void auhentification() {
+       class CreateAccount extends AsyncTask<String, String, String> {
+           String result;
+           private Context context;
+           private int request = 0;
+           //flag 0 means get and 1 means post.(By default it is get.)
+           public CreateAccount(Context context, int flag) {
+               this.context = context;
+               this.request = flag;
+           }
+           @Override
+           protected String doInBackground(String[]arg0) {
+               try{
+                   String email=(String)arg0[0];
+                   String password=(String)arg0[1];
 
-                    String link="http://192.168.43.94/pfe/Verifier_connexion.php?email="+email+"&password="+password;
+                   String link="http://192.168.43.94/pfe/Verifier_connexion.php?email="+email+"&password="+password;
 
-                    URL url = new URL(link);
-                    HttpClient client = new DefaultHttpClient();
-                    HttpGet request = new HttpGet();
-                    request.setURI(new URI(link));
-                    HttpResponse response = client.execute(request);
-                    BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
-                    StringBuffer sb = new StringBuffer("");
-                    String line="";
-                    while ((line = in.readLine()) != null) {
-                        sb.append(line);
-                        break;
-                    }
+                   URL url = new URL(link);
+                   HttpClient client = new DefaultHttpClient();
+                   HttpGet request = new HttpGet();
+                   request.setURI(new URI(link));
+                   HttpResponse response = client.execute(request);
+                   BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+                   StringBuffer sb = new StringBuffer("");
+                   String line="";
+                   while ((line = in.readLine()) != null) {
+                       sb.append(line);
+                       break;
+                   }
 
-                    in.close();
-                    return sb.toString();
-                } catch(Exception e){
-                    return new String("Exception: " + e.getMessage());
-                }
+                   in.close();
+                   return sb.toString();
+               } catch(Exception e){
+                   return new String("Exception: " + e.getMessage());
+               }
 
 
-            }
-            @Override
-            protected void onPostExecute(String result) {
+           }
+           @Override
+           protected void onPostExecute(String result) {
        /*   Toast.makeText(this.context,result,Toast.LENGTH_SHORT).show(); */
-                // Reset errors.
-                mEmailView.setError(null);
-                mPasswordView.setError(null);
-                boolean verif=true;
-                // Store values at the time of the login attempt.
-                String email = mEmailView.getText().toString();
-                String password = mPasswordView.getText().toString();
+               // Reset errors.
+               mEmailView.setError(null);
+               mPasswordView.setError(null);
+               boolean verif=true;
+               // Store values at the time of the login attempt.
+               String email = mEmailView.getText().toString();
+               String password = mPasswordView.getText().toString();
 
-                // Check for a valid password, if the user entered one.
-
-
-                // Check for a valid email address.
-                 if (TextUtils.isEmpty(email)) {mEmailView.setError("Champ vide");verif=false;}
-                 else if (!isEmailValid(email)) {mEmailView.setError("Email invalide");verif=false;}
-                 if (TextUtils.isEmpty(password)) {mPasswordView.setError("Champ vide");verif=false;}
-                else if (verif)
-                 {
-                    if (result.equals("ok"))
-                    {SharedPreferences.Editor editor=getSharedPreferences("key_info",MODE_PRIVATE).edit();
-                        editor.putString("MY_KEY",mEmailView.getText().toString());
-                        editor.commit();
-                        SharedPreferences.Editor usser_editor=getSharedPreferences("KEY_IDENTITY",MODE_PRIVATE).edit();
-                        usser_editor.putString("KEY_IDENTITY_INFO",mEmailView.getText().toString());
-                        usser_editor.commit();
-                        Intent intent_Accueil = new Intent(getApplicationContext(), Accueil.class);
-                        intent_Accueil.putExtra("KEY_MAIL",email);
-                        startActivity(intent_Accueil);
+               // Check for a valid password, if the user entered one.
 
 
-                    }
-                    else if (result.equals("erreur"))
-                    {
-                        erreur.setVisibility(VISIBLE);
-                        erreur.setText("mot de passe ou identifiant incorrect");
-                    }
+               // Check for a valid email address.
+               if (TextUtils.isEmpty(email)) {mEmailView.setError("Champ vide");verif=false;}
+               else if (!isEmailValid(email)) {mEmailView.setError("Email invalide");verif=false;}
+               if (TextUtils.isEmpty(password)) {mPasswordView.setError("Champ vide");verif=false;}
+               else if (verif)
+               {
+                   if (result.equals("ok"))
+                   {SharedPreferences.Editor editor=getSharedPreferences("key_info",MODE_PRIVATE).edit();
+                       editor.putString("MY_KEY",mEmailView.getText().toString());
+                       editor.commit();
+                       usser_editor=getSharedPreferences("KEY_IDENTITY",MODE_PRIVATE).edit();
+                       usser_editor.putString("KEY_IDENTITY_INFO",mEmailView.getText().toString());
+                       usser_editor.commit();
+                       Intent intent_Accueil = new Intent(getApplicationContext(), Accueil.class);
+                       intent_Accueil.putExtra("KEY_MAIL",email);
+                       startActivity(intent_Accueil);
 
-                else
-                { Toast.makeText(getApplicationContext(),"Probléme de Connexion",Toast.LENGTH_SHORT).show();
-                    }
 
-                }}}
+                   }
+                   else if (result.equals("erreur"))
+                   {
+                       erreur.setVisibility(VISIBLE);
+                       erreur.setText("mot de passe ou identifiant incorrect");
+                   }
 
-                mail=mEmailView.getText().toString();
-        mdp=mPasswordView.getText().toString();
-        new CreateAccount(this,0).execute(mail,mdp);
-            }
+                   else
+                   { Toast.makeText(getApplicationContext(),"Probléme de Connexion",Toast.LENGTH_SHORT).show();
+                   }
+
+               }}}
+
+       mail=mEmailView.getText().toString();
+       mdp=mPasswordView.getText().toString();
+       new CreateAccount(this,0).execute(mail,mdp);
+   }
         }
 
 

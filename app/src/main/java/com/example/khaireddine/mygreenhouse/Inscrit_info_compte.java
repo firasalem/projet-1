@@ -118,9 +118,11 @@ public class Inscrit_info_compte extends AppCompatActivity {
                         SharedPreferences.Editor editor=getSharedPreferences("KEY_inscription_share",MODE_PRIVATE).edit();
                         editor.putString("KEY_inscription",get_prenom+" "+get_nom);
                         editor.commit();
-                        SharedPreferences.Editor usser_editor=getSharedPreferences("KEY_IDENTITY",MODE_PRIVATE).edit();
+
+                       SharedPreferences.Editor usser_editor=getSharedPreferences("KEY_IDENTITY",MODE_PRIVATE).edit();
                         usser_editor.putString("KEY_IDENTITY_INFO", FieldUsername.getText().toString());
-                        editor.commit();
+                        usser_editor.commit();
+
                     }
                     else
                     { //Toast.makeText(getApplicationContext(),get_nom,Toast.LENGTH_LONG).show();
